@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang='id'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>infrastructure.html</title><script src='https://cdn.tailwindcss.com'></script></head><body class='flex flex-col min-h-screen'><header class="bg-gradient-to-r from-black via-gray-900 to-blue-900 text-white shadow-md py-3">
+  <div class="container mx-auto flex items-center justify-between px-4 md:px-6">
+    <div class="text-lg md:text-2xl font-bold tracking-wide">PMC HDDAP</div>
+    <div><img src='HDDAP.png' alt='Logo HDDAP' class='h-10 md:h-12 mx-auto'></div>
+    <div class="relative">
+      <button id="menuButton" class="text-white text-3xl focus:outline-none">&#9776;</button>
+      <div id="menuDropdown" class="hidden absolute right-0 mt-2 w-56 md:w-64 bg-white text-gray-800 rounded-lg shadow-lg border border-gray-200 z-50 transition-all duration-300 ease-in-out opacity-0">
+        <ul class="divide-y divide-gray-200">
+          <li><a href='tupoksi.html' class='block px-4 py-3 hover:bg-gray-100'>TUPOKSI PMC</a></li>
+          <li><a href='verval.html' class='block px-4 py-3 hover:bg-gray-100'>Data Verval CPCL</a></li>
+          <li class='relative group'>
+            <button class='w-full text-left px-4 py-3 hover:bg-gray-100 flex justify-between items-center'>
+              Modul per Tenaga Ahli<span>▸</span>
+            </button>
+            <ul class='hidden group-hover:block absolute left-full top-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg'>
+              <li><a href='modul/cultivation.html' class='block px-4 py-2 hover:bg-gray-100'>Cultivation</a></li>
+              <li><a href='modul/infrastructure.html' class='block px-4 py-2 hover:bg-gray-100'>Infrastructure & Mechanization</a></li>
+              <li><a href='modul/postharvest.html' class='block px-4 py-2 hover:bg-gray-100'>Post-Harvest</a></li>
+              <li><a href='modul/marketing.html' class='block px-4 py-2 hover:bg-gray-100'>Marketing</a></li>
+              <li><a href='modul/gender.html' class='block px-4 py-2 hover:bg-gray-100'>Gender & Social Inclusion</a></li>
+              <li><a href='modul/fei.html' class='block px-4 py-2 hover:bg-gray-100'>Farmer Economic Institution</a></li>
+              <li><a href='modul/it.html' class='block px-4 py-2 hover:bg-gray-100'>Information Technology (IT)</a></li>
+              <li><a href='modul/finance.html' class='block px-4 py-2 hover:bg-gray-100'>Financial</a></li>
+            </ul>
+          </li>
+          <li><a href='monev.html' class='block px-4 py-3 hover:bg-gray-100'>Monitoring & Evaluation</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header><main class='flex-grow bg-green-100 py-10 px-4 md:px-16'><div class='container mx-auto'><h1 class='text-2xl md:text-3xl font-bold text-green-900 mb-4'>Infrastructure</h1><p class='text-base md:text-lg text-gray-800'>Menangani infrastruktur irigasi, jalan usaha tani, dan mekanisasi pertanian.</p></div></main><footer class='bg-amber-100 text-center py-4 text-sm text-gray-700 border-t-2 border-amber-200'>
+  <p class='font-semibold'>PMCHDDAP © 2025</p>
+  <p class='text-xs text-gray-500'>Powered By <span class='font-semibold'>RYDHLAND</span></p>
+</footer>
+<script>
+  const menuButton = document.getElementById('menuButton');
+  const menuDropdown = document.getElementById('menuDropdown');
+  menuButton.addEventListener('click', ()=>{
+    menuDropdown.classList.toggle('hidden');
+    if (!menuDropdown.classList.contains('hidden')) {menuDropdown.style.opacity = '1';}
+    else {menuDropdown.style.opacity = '0';}
+  });
+  window.addEventListener('click', e=>{
+    if(!menuButton.contains(e.target)&&!menuDropdown.contains(e.target)){
+      menuDropdown.classList.add('hidden');
+      menuDropdown.style.opacity = '0';
+    }
+  });
+</script></body></html>
